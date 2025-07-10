@@ -46,7 +46,65 @@ If you're using VS Code:
 ### Option 5: Direct File Opening (Not Recommended)
 You can try opening `index.html` directly in your browser, but this may cause issues with loading game assets due to CORS restrictions.
 
-## 📋 Requirements
+## � How to Play on Mobile/Phone
+
+### Method 1: Using Your Computer's IP Address
+1. **Find your computer's IP address**:
+   - **Windows**: Open Command Prompt and type `ipconfig`
+   - **Mac/Linux**: Open Terminal and type `ifconfig` or `ip addr`
+   - Look for your local IP (usually starts with `192.168.` or `10.0.`)
+
+2. **Start the server** using any of the methods above (Python recommended)
+
+3. **On your phone**:
+   - Make sure your phone is connected to the same WiFi network as your computer
+   - Open your phone's browser (Chrome, Safari, etc.)
+   - Go to: `http://[YOUR_COMPUTER_IP]:8000`
+   - Example: `http://192.168.1.100:8000`
+
+### Method 2: Using ngrok (Recommended for Easy Access)
+1. **Install ngrok**:
+   ```bash
+   # Download from https://ngrok.com/download
+   # Or install via package manager
+   ```
+
+2. **Start your local server** (using any method above)
+
+3. **Create a tunnel**:
+   ```bash
+   ngrok http 8000
+   ```
+
+4. **On your phone**:
+   - Open your browser
+   - Go to the URL shown by ngrok (e.g., `https://abc123.ngrok.io`)
+   - Share this URL with friends to play together!
+
+### Method 3: Using LocalTunnel
+1. **Install LocalTunnel**:
+   ```bash
+   npm install -g localtunnel
+   ```
+
+2. **Start your local server** (using any method above)
+
+3. **Create a tunnel**:
+   ```bash
+   lt --port 8000
+   ```
+
+4. **On your phone**:
+   - Open your browser
+   - Go to the URL provided by LocalTunnel
+
+### Mobile Tips:
+- **Rotate your phone** to landscape mode for the best gaming experience
+- **Use headphones** for better audio experience
+- **Close other apps** to ensure smooth performance
+- **Keep your phone charged** - gaming can drain battery quickly
+
+## �📋 Requirements
 - Modern web browser with HTML5 canvas support
 - Local web server (for proper asset loading)
 - Internet connection (for some integrations)
