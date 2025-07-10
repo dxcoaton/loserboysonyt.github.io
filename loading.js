@@ -8,6 +8,41 @@ a:visited {text-decoration:none;} http/@retrobowl.com
 
 a:hover  {text-decoration:none;}
 a:active {text-decoration:none;}
+
+/* Tips styling */
+.tips-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.tip-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffff00;
+}
+
+.tip-text {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.tip-counter {
+    font-size: 12px;
+    color: #ccc;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Loading</title>
@@ -16,6 +51,37 @@ a:active {text-decoration:none;}
 <div class="linear">
 <script language="JavaScript">
 var url = 'https://loserboysonyt.github.io/';
+
+// Game tips array
+var tips = [
+    "💡 TIP: Practice your timing - the key to successful passes is releasing the ball at the right moment!",
+    "💡 TIP: Watch your player's stamina - tired players perform worse and are more likely to get injured.",
+    "💡 TIP: Upgrade your coaching staff - better coaches improve player development and team morale.",
+    "💡 TIP: Balance your roster - don't focus only on offense or defense, you need both!",
+    "💡 TIP: Use the practice mode to perfect your throwing mechanics before big games.",
+    "💡 TIP: Keep your fans happy - good press conferences and winning games boost fan morale.",
+    "💡 TIP: Scout new players regularly - fresh talent can turn your season around!",
+    "💡 TIP: Save your timeouts for crucial moments - they can be game-changers in tight situations.",
+    "💡 TIP: Pay attention to weather conditions - they affect gameplay and strategy.",
+    "💡 TIP: Develop your quarterback - a good QB is the foundation of any successful team."
+];
+
+var currentTip = 0;
+
+function showTip() {
+    var tipContainer = document.getElementById('tip-container');
+    var tipTitle = document.getElementById('tip-title');
+    var tipText = document.getElementById('tip-text');
+    var tipCounter = document.getElementById('tip-counter');
+    
+    tipText.innerHTML = tips[currentTip];
+    tipCounter.innerHTML = "Tip " + (currentTip + 1) + " of " + tips.length;
+    
+    currentTip = (currentTip + 1) % tips.length;
+}
+
+// Change tip every 3 seconds
+setInterval(showTip, 3000);
 </script>
     <div align=center style="position: absolute;   
     height:200px;
@@ -41,6 +107,14 @@ if(p==27){p=0;j=1-j;window.location.href="https://loserboysonyt.github.io/";}}
 </script>
 	</div>
 	</div>
+	
+	<!-- Tips Container -->
+	<div class="tips-container" id="tip-container">
+		<div class="tip-title" id="tip-title">🎮 GAME TIPS</div>
+		<div class="tip-text" id="tip-text">💡 TIP: Practice your timing - the key to successful passes is releasing the ball at the right moment!</div>
+		<div class="tip-counter" id="tip-counter">Tip 1 of 10</div>
+	</div>
+	
 	<div align="center">
 <script>
 <!--
